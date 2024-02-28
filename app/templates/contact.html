@@ -1,0 +1,35 @@
+{%extends 'base.html'%}
+{%block main%}
+<h1>Contact Form</h1>
+<hr>
+<p>Fill in this form to contact the site owners.</p>
+<br>
+<form action="{{url_for('contact')}}" method="post" novalidate>
+    {{form.crsf_token}}
+    <div class="email-form">
+        {{ form.name.label(class="form-label")}} 
+        <p>Please enter your full name</p>
+        {{form.name(class="form-control")}}
+    </div>
+    <br> 
+    <div class="email-form">
+        {{ form.email.label(class="form-label")}}
+        <p>Please enter your e-mail address</p>
+         {{form.email(class="form-control")}}
+    </div>
+    <br>
+    <div class="email-form">
+        {{ form.subject.label(class="form-label")}} 
+        <p>Please enter the subject of your message.</p>
+        {{form.subject(class="form-control")}}
+    </div>
+    <br>
+    <div class="email-form">
+        {{ form.message.label(class="form-label")}} 
+        <p>Please enter the message you would like to send.</p>
+        {{form.message(class="form-control")}}
+    </div>
+    <br>
+    <br>
+    <button type="submit" class=""buttn">Send</button>
+{%endblock%}

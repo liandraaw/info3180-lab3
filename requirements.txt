@@ -1,5 +1,8 @@
 click==8.0.3
+email-validator==2.1.0post1
 Flask==2.2.2
+Flask-Mail
+Flask-WTF==1.2.1
 gunicorn==20.1.0
 importlib-metadata==6.0.0
 itsdangerous==2.0.1

@@ -5,7 +5,9 @@
 <p>Fill in this form to contact the site owners.</p>
 <br>
 <form action="{{url_for('contact')}}" method="post" novalidate>
-    {{form.crsf_token}}
+    
+    {{ form.hidden_tag() }}
+
     <div class="email-form">
         {{ form.name.label(class="form-label")}} 
         <p>Please enter your full name</p>

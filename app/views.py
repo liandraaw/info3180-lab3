@@ -23,13 +23,20 @@ def contact():
     myform= ContactForm()
     if request.method=='POST':
         if myform.validate_on_submit():
-            msg= Message(myform.subject.data, sender=(myform.name.data, myform.email.data),
+            name= myform.name.data
+            email= myform.email.data
+            subject=myform.subject.data
+            message= myform.message.data
+
+
+            msg= Message(subject, 
+                         sender=(name, email),
                          recipients=["to@example.com"])
-            msg.body= myform.message.data
+            msg.body= message
             mail.send(msg)
 
             flash('Your e-mail has been sent successfully')
-            redirect(home)
+            return redirect(url_for(home))
             
         flash_errors(myform)
     return render_template('contact.html', form=myform)

@@ -30,8 +30,8 @@ def contact():
 
 
             msg= Message(subject, 
-                         sender=(name, email),
-                         recipients=["to@example.com"])
+                         sender=(name, "from@example.com"),
+                         recipients=[email])
             msg.body= message
             mail.send(msg)
 
